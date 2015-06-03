@@ -124,7 +124,7 @@ class App extends React.Component{
     render() {
 	  return (
       <div className="App">
-         <NavBar /> 
+         <NavBar />
          <div className='container'x>
            <RouteHandler/>
          </div>
@@ -135,12 +135,12 @@ class App extends React.Component{
 
 
 var routes = (
-  <Route handler={App} name='App' path='/'>
-    <Route handler={Blog} name='Blog' path='/blog'/>
-    <Route handler={FrontPage} name='FrontPage' path='/frontpage' />
-    <Route handler={Shop} name='Shop' path='/shop' data={this.state.data.bind(this)} >
-     <Route handler={ProductPage} name='ProductPage' path='/productpage' data={this.state.data} />
-    </Route> 
+    <Route handler={App} name='App' path='/'>
+        <Route handler={Blog} name='Blog' path='/blog'/>
+        <Route handler={FrontPage} name='FrontPage' path='/frontpage' />
+        <Route handler={Shop} name='Shop' path='/shop' data={this.state.data.bind(this)} >
+            <Route handler={ProductPage} name='ProductPage' path='/productpage' data={this.state.data} />
+        </Route>
     </Route>
 
 );
