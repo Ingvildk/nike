@@ -12,7 +12,7 @@ var {NavItemLink, ButtonLink, ListGroupItemLink} = ReactRouterBootstrap;
 export default class NavBar extends React.Component {
 	render() {
 		return (
-              <Navbar brand='alicia'  inverse toggleNavKey={0}>
+            <Navbar brand='alicia'  inverse toggleNavKey={0}>
     		  <Nav right eventKey={0}> {/* This is the eventKey referenced */}
       		  <NavItemLink to='FrontPage' eventKey={1} href='#'>Hjem</NavItemLink>
      		  <NavItemLink to='Blog'eventKey={2} href='#'>Blog</NavItemLink>

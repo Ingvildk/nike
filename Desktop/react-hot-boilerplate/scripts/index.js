@@ -89,6 +89,38 @@ class MessageBox extends React.Component {
 
 
 class App extends React.Component{
+
+    constructor(props) {
+    super(props);
+    this.state = { 
+          data: [{name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike1.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike2.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike3.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike4.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike4.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike1.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike2.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike3.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike4.jpg"},
+          {name: "lunarglide", price: "1200,-", 
+          category: "Womens running shoes", img: "/images/nike4.jpg"}
+          ]
+        };
+      }
+
+    showProductHandler(e) {
+        <Route name="ProductId" path={e.name} handler={ProductId}/>
+      }
+
     render() {
 	  return (
       <div className="App">
@@ -106,11 +138,11 @@ var routes = (
   <Route handler={App} name='App' path='/'>
     <Route handler={Blog} name='Blog' path='/blog'/>
     <Route handler={FrontPage} name='FrontPage' path='/frontpage' />
-    <Route handler={Shop} name='Shop' path='/shop' />
-    <Route handler={ProductPage} name='ProductPage' path='/productpage' >
-      <Route name="ProductId" path=":ProductId" handler={ProductId}/>
+    <Route handler={Shop} name='Shop' path='/shop' data={this.state.data.bind(this)} >
+     <Route handler={ProductPage} name='ProductPage' path='/productpage' data={this.state.data} />
     </Route> 
     </Route>
+
 );
 
 Router.run(routes, function (Handler) {
