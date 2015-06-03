@@ -4,6 +4,7 @@ import FrontPage from './frontpage';
 import Blog from './blog';
 import Shop from './shop';
 import ProductPage from './productpage';
+import ProductId from './productid';
 
 //import App from './App';
 import Router from 'react-router';
@@ -106,8 +107,10 @@ var routes = (
     <Route handler={Blog} name='Blog' path='/blog'/>
     <Route handler={FrontPage} name='FrontPage' path='/frontpage' />
     <Route handler={Shop} name='Shop' path='/shop' />
-    <Route handler={ProductPage} name='ProductPage' path='/productpage' />
-  </Route>
+    <Route handler={ProductPage} name='ProductPage' path='/productpage' >
+      <Route name="ProductId" path=":ProductId" handler={ProductId}/>
+    </Route> 
+    </Route>
 );
 
 Router.run(routes, function (Handler) {
